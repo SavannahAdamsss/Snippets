@@ -1,0 +1,16 @@
+Content-Type: application/json is just content header, the content header is just information about type of returned data, ex::JSON,image(png,jpg,etc..),html. Keep in mind, that JSON in javascript is an array or object. if you want to see all the data, use console.log instead of alert
+
+alert(response.text);//will alert "[object Object]" string
+console.log(response.text);//will logging all data object
+if you want to alert original JSON as string, than add single quotation marks ('):
+
+echo "'" . json_encode(array('text' => 'omrele')) . "'";
+//alert(response.text) will alert {"text":"omrele"}
+Do not use double quotes, it will confuse javascript, because JSON uses double quote on each value and key:
+
+echo '<script>var returndata=';
+echo '"' . json_encode(array('text' => 'omrele')) . '"';
+echo ';</script>';
+
+//it will return wrong javascript code: 
+<script>var returndata="{"text":"omrele"}";</script>
