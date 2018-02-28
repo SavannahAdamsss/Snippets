@@ -1,4 +1,4 @@
-// For calling API information like photo and image Nodes. Similar to Telephone API drill 1- Stranger Things:
+// Get Request for calling API information like photo and image Nodes. Similar to Telephone API drill 1- Stranger Things:
  
  
  
