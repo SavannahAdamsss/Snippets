@@ -69,3 +69,43 @@ fetch(request)
 .then(function() {
     // Handle response we get from the API
 })
+
+
+// Casey's GET AND FETCH AND STRINGAFY AND JSON ERRORS:
+
+const url = 'your url here';
+
+fetch(url, {
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json'
+  },
+  body: JSON.stringify({
+    things: 'wow',
+    stuff: 'wat'
+  })
+}).then(response => {
+  console.log(response);
+  if(response.ok) {
+    return response.json();
+  } else {
+    const contentType = response.headers.get('content-type');
+    if (contentType.startsWith('application/json')) {
+      return response.json().then(json => {
+        const error = new Error(json.error.message);
+        throw error;
+      });
+    } else {
+      const error = new Error(response.statusText);
+      throw error;
+    }
+  }
+}).then(json => {
+  console.log(json);
+  // add data to the page
+  // show success message
+}).catch(error => {
+  console.error('error', error.message);
+  // show an error message
+});
+
