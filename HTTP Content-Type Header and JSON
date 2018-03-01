@@ -1,4 +1,8 @@
-Content-Type: application/json is just content header, the content header is just information about type of returned data, ex::JSON,image(png,jpg,etc..),html. Keep in mind, that JSON in javascript is an array or object. if you want to see all the data, use console.log instead of alert
+Content-Type: application/json is just content header, 
+the content header is just information about type of returned data, 
+ex::JSON,image(png,jpg,etc..),html. Keep in mind, 
+that JSON in javascript is an array or object. 
+if you want to see all the data, use console.log instead of alert
 
 alert(response.text);//will alert "[object Object]" string
 console.log(response.text);//will logging all data object
@@ -14,3 +18,5 @@ echo ';</script>';
 
 //it will return wrong javascript code: 
 <script>var returndata="{"text":"omrele"}";</script>
+
+
