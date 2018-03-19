@@ -109,3 +109,17 @@ They may look a bit different from normal HTML, but : and @ are valid chars for 
 and all Vue.js supported browsers can parse it correctly. In addition, they do not appear in the 
 final rendered markup. The shorthand syntax is totally optional, but you will likely appreciate it 
 when you learn more about its usage later.
+  
+  
+  
+  
+To display the prices in a correct format we will have to define a simple currency filter. 
+Filters allow us to lazily modify or filter the model data. To define a custom filter we 
+have to use the following syntax:
+
+// Define a custom filter called "currency". 
+Vue.filter('currency', function (value) {
+    return '$' + value.toFixed(2);
+});
+As you can see our filter is pretty straightforward - it adds a dollar sign and proper number decimals. 
+Just like in Angular filters are applied using the | syntax - {{ some_data | filter }}.
