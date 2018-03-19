@@ -54,3 +54,35 @@ Example from Website: https://vuejs.org/v2/guide/#
   })
   var product = 'Boots'
 </script>
+
+
+
+Getting Started:
+
+The easiest way to try out Vue.js is using the JSFiddle Hello World example. 
+Feel free to open it in another tab and follow along as we go through some basic examples. 
+Or, you can create an index.html file and include Vue with:
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+or:
+
+<!-- production version, optimized for size and speed -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+The Installation page provides more options of installing Vue. Note: We do not recommend 
+that beginners start with vue-cli, especially if you are not yet familiar with Node.js-based build tools.
+
+Declarative Rendering:
+
+At the core of Vue.js is a system that enables us to declaratively render data to the DOM using 
+straightforward template syntax:
+
+<div id="app">
+  {{ message }}
+</div>
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
